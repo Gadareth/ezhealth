@@ -7,6 +7,25 @@ if (Meteor.isClient) {
       return Fields.find({});
     }
   });
+
+  Template.body.events({
+    "submit .new-field": function (event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+ 
+      // Get value from form element
+      var text = event.target.text.value;
+ 
+      // Insert a task into the collection
+      Fields.insert({
+        text: text,
+        createdAt: new Date() // current time
+      });
+ 
+      // Clear form
+      event.target.text.value = "";
+    }
+  });
 }   
   
 /*  Session.setDefault('counter', 0);
