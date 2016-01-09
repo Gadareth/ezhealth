@@ -1,6 +1,15 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+  // This code only runs on the client
+  Template.body.helpers({
+    fields: [
+      { text: "This is field 1" },
+      { text: "This is field 2" },
+      { text: "This is field 3" }
+    ]
+  });
+}   
+  
+/*  Session.setDefault('counter', 0);
 
   Template.hello.helpers({
     counter: function () {
@@ -21,3 +30,4 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+*/
