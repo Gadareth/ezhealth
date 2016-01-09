@@ -1,3 +1,5 @@
+Tasks = new Mongo.Collection("fields");
+
 if (Meteor.isClient) {
   // This code only runs on the client
   Template.body.helpers({
@@ -5,7 +7,7 @@ if (Meteor.isClient) {
       { text: "This is field 1" },
       { text: "This is field 2" },
       { text: "This is field 3" }
-    ]
+    ] 
   });
 }   
   
