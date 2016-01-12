@@ -4,7 +4,7 @@ if (Meteor.isClient) {
   // This code only runs on the client
   Template.body.helpers({
     fields: function () {
-      return Fields.find({});
+      return Fields.find({}, {sort: {createdAt: -1}});
     }
   });
 
